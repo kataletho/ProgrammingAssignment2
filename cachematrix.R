@@ -3,6 +3,7 @@
 ## with repeatedly calculating the inverse of the matrix.
 
 ## Creates a special "matrix" object that can cache the inverse of the matrix.
+## x must be an invertible matrix.
 
 makeCacheMatrix <- function(x = matrix()) {
     i <- NULL
@@ -22,6 +23,8 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## Calculates and caches the inverse matrix of a matrix, 
 ## or uses the cached inverse matrix if it already exists.
+## x must be a CacheMatrix created by passing an invertible matrix
+## to makeCacheMatrix.
 
 cacheSolve <- function(x, ...) {
     i <- x$getinverse()
